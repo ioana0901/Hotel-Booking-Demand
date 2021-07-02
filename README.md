@@ -1,5 +1,5 @@
 # Hotel-Booking-Demand
-Proiect realizat in cadrul cursului Fundamente de Big Data
+Proiect realizat in cadrul cursului Fundamente de Big Data - Anul III
 ## 1.	Introducere
 
 În cadrul acestui proiect am analizat un set de date ce ține de industria ospitalității. Astfel, rezultate acestui studiu sunt utile persoanelor care lucrează în această zonă, mai exact celor care care lucrează în domeniul hotelier, sau persoanelor care doresc să înțeleagă care sunt factorii care influnețează oaspeții hotelurilor să renunțe la rezervările lor, dar și cum se poate prezice anularea acestora.
