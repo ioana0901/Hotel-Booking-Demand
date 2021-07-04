@@ -83,7 +83,6 @@ There are 32 columns:
   <tr>
     <td><b>customer_type</b></td>
     <td>Type of booking<br>
-    <b>Obs:</b><br>
         <ul>
           <li><i>contract</i> - when the booking has an allotment or other type of contract associated to it</li>
           <li><i>group</i> - when the booking is associated to a group</li>
@@ -204,7 +203,7 @@ Thus, in order to clean the data I will:<br>
 <li> The <i> company </i> attribute will take the value "No" if it is null, or "Yes" otherwise, meaning that the reservation was made by a company or not </li>
 <li> Add a <i> total_nights_stays </i> column as the sum between <i> stays_in weekend_nights </i> and <i> stays_in_week_nights </i>, meaning the total number of nights booked </li>
 <li> Add a new <i> stay_total_cost </i> column as a product between <i> total_nights_stays </i> and <i> adr </i>, meaning the total cost of the booking </li>
-<li> Remove columns <i> babies, stays_in_weeken_nights, stays_in_week_nights, reservation_status_date, reservation_status, arrival_date_day_of_month, arrival_date_year, arrival_date_week_number, assigned_room_type, country, total_of_special_repares, required</li>
+<li> Remove columns <i> babies, stays_in_weeken_nights, stays_in_week_nights, reservation_status_date, reservation_status, arrival_date_day_of_month, arrival_date_year, arrival_date_week_number, assigned_room_type, country, total_of_special_repares, required</i></li>
 </ul>
 At the end there are 21 columns left. <br>
 ##  3.	Results and discussions
