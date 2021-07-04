@@ -27,7 +27,7 @@ There are 32 columns:
   </tr>
   <tr>
     <td><b>agents</b></td>
-    <td>ID of the travel agency that made the booking<br><b>Obs:</b> Could be:<i>null</i> indicating that the reservation was not made via an agency</td>
+    <td>ID of the travel agency that made the booking<br>Could be:<i>null</i> indicating that the reservation was not made via an agency</td>
     <td>categorical</td>
   </tr>
   <tr>
