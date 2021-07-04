@@ -205,7 +205,7 @@ Thus, in order to clean the data I will:<br>
 <li> Add a new <i> stay_total_cost </i> column as a product between <i> total_nights_stays </i> and <i> adr </i>, meaning the total cost of the booking </li>
 <li> Remove columns <i> babies, stays_in_weeken_nights, stays_in_week_nights, reservation_status_date, reservation_status, arrival_date_day_of_month, arrival_date_year, arrival_date_week_number, assigned_room_type, country, total_of_special_repares, required</i></li>
 </ul>
-At the end there are 21 columns left. <br>
+At the end there are 21 columns left.
 ## 3.  Results and discussions
 <br>First, I created correlation matrices for both uncanceled and canceled bookings (shown below) to see if the attributes are independent or not. It is thus observed that the attributes are more correlated in case of uncanceled bookings. <br>
 There are some positive correlations between:<br>
