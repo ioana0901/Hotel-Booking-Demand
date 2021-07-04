@@ -2,12 +2,12 @@
 Project realized within the course Fundamentals of Big Data - 3rd year
 ## 1.	Introduction
 
-In this project I analyzed a set of data related to the hospitality industry. Thus, the results of this study are useful to people who work in this area, more precisely to those who work in the hotel field, or to people who want to understand what are the factors that influence hotel guests to cancel their reservations, but also how to predict them.
-Through this project I wanted to discover how well the possibility of canceling reservations can be predicted, but also what influences their cancellation. The choice of these tasks is relevant, as solving them can help information users (managers of the two hotels) to better understand customer issues or reservations.
+In this project, I analyzed a set of data related to the hospitality industry. Thus, the results of this study are useful to people who work in this area, more precisely to those who work in the hotel field, or to people who want to understand the factors that influence hotel guests to cancel their reservations how to predict them.
+Through this project, I wanted to discover how well the possibility of canceling reservations can be predicted and what influences their cancellation. The choice of these tasks is relevant, as solving them can help information users (managers of the two hotels) to better understand customer issues or reservations.
 
 ## 2.	Setul de date
 
-This data set(hotel_bookings.cvs) contains booking information for a city hotel and a resort hotel from Portugal, and includes information such as when the booking was made, length of stay, the number of adults, children, and/or babies, and the number of available parking spaces, among other things.
+This data set(hotel_bookings.csv) contains booking information for a city hotel and a resort hotel from Portugal and includes information such as when the booking was made, length of stay, the number of adults, children, and/or babies, and the number of available parking spaces, among other things.
 There are 32 columns:
 <table style="width:100%">
   <tr>
@@ -206,8 +206,8 @@ Thus, in order to clean the data I will:<br>
 <li> Remove columns <i> babies, stays_in_weeken_nights, stays_in_week_nights, reservation_status_date, reservation_status, arrival_date_day_of_month, arrival_date_year, arrival_date_week_number, assigned_room_type, country, total_of_special_repares, required</i></li>
 </ul>
 At the end there are 21 columns left. <br>
-##  3.  Results and discussions
-First, I created correlation matrices for both uncanceled and canceled bookings (shown below) to see if the attributes are independent or not. It is thus observed that the attributes are more correlated in case of uncanceled bookings. <br>
+## 3.  Results and discussions
+<br>First, I created correlation matrices for both uncanceled and canceled bookings (shown below) to see if the attributes are independent or not. It is thus observed that the attributes are more correlated in case of uncanceled bookings. <br>
 There are some positive correlations between:<br>
 <ul>
 <li> <i> children </i> and <i> adr </i> - meaning that bookings with children are more expensive, affecting the total cost of the booking; </li>
@@ -229,7 +229,7 @@ It is noted that the model has an accuracy of 77.94% and a fairly good P-value. 
 The positive class is NO since there are fewer cases of cancellations.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124272856-fb49a280-db47-11eb-8eac-71dbdc2de1ec.png)<br>
 ### b.	Naive Bayes
-In order to make a Naive Bayes model, I first made a feature set in which I kept all the attributes that are not is_canceled. Next, I used the 10 folds cross validation method and made the model.
+To make a Naive Bayes model, I first made a feature set in which I kept all the attributes that are not is_canceled. Next, I used the 10 folds cross-validation method and made the model.
 To find the optimal model I performed an extensive search, the result being the following.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124272928-14eaea00-db48-11eb-99a4-d9fa67226993.png)<br>
 It is noted that the optimal model has an accuracy of 76.08%, which is the one that uses kernel and adjust = 1.
@@ -245,7 +245,7 @@ It is noticed that deposit_type plays a very important role, which is placed at 
 On the second is deposit_type (No refund).The next important attribute is lead_time.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124273205-62ffed80-db48-11eb-9add-11b0cfc4d895.png)<br>
 
-  We can conclude as follows: if the reservation is <i>No deposit / Refundable</i> and the waiting time does not exceed 12 days, then the booking will not be canceled, or if it exceeds 12 days, and the person making the booking has not made any cancellations in the past , then they won't cancel it then either, but if they canceled any bookings then, they will most likely do it again. <br>If the booking is Non Refund type then it will be canceled.<br>
+  We can conclude as follows: if the reservation is <i>No deposit / Refundable</i> and the waiting time does not exceed 12 days, then the booking will not be canceled, or if it exceeds 12 days, and the person making the booking has not made any cancellations in the past, then they won't cancel it then either, but if they canceled any bookings then, they will most likely do it again. <br>If the booking is Non-Refund type then it will be canceled.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124273247-70b57300-db48-11eb-9704-d9403f9c410e.png)<br>
 The model has an accuracy of 76.91% and a good P-value, showing that this is a fairly good classification method. However, it does not differ much from previous models, no information rate and P-value have the same value as the Naive Bayes model, and the accuracy is only slightly (0.47) higher.<br>
 
@@ -255,7 +255,7 @@ The model has an accuracy of 76.91% and a good P-value, showing that this is a f
 The resulting tree this time is a little deeper. Similar to the previous one, deposit_type and lead_time are placed on the first two levels, but this time the time period for lead_time is 8.5 days and not 11.5.<br>
 The market_segment attribute ranks third and then previous_cancellations. <br>
 Thus, if the reservation is not of the No Deposit / Refundable type then it will be canceled.<br>
-However, if it is of that type and if the waiting time does not exceed 9 days, then it will not be canceled.<br>
+However, if it is of that type and the waiting time does not exceed 9 days, it will not be canceled.<br>
 If 9 days are exceeded and the marketing segment is not a defined one, then again, it will not be canceled.<br>
 Instead, if the marketing segment is a defined one and the person making the booking has canceled bookings in the past, then they will cancel the reservation now, and if they have not canceled anything in the past, then they will probably not cancel it now either.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124273370-9d698a80-db48-11eb-9f29-803519a6cbd6.png)<br>
@@ -272,7 +272,7 @@ The model has an accuracy of 82.02%, much better than previous models. Also, the
 ![image](https://user-images.githubusercontent.com/63421754/124273528-cbe76580-db48-11eb-85cc-1dc1e5c0bc8f.png)<br>
 
 With the help of the randomForest function, 500 trees were created, 4 variables at each node. <br>
-The out-of-bag error has a value of 18.14%, resulting an accuracy of 82% on the remaining sets. <br>
+The out-of-bag error has a value of 18.14%, resulting in an accuracy of 82% on the remaining sets. <br>
 Furthermore, to find the best model, I used the tuneRF command taking as parameters the feature set, also used in the Naive Bayes model, making 500 trees, which will start with 5 variables and will increase with a stepFactor = 1.5, stopping when performance falls below 1%.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124273769-1bc62c80-db49-11eb-9503-ef5ac2306f36.png)<br>
 
