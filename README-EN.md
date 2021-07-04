@@ -205,8 +205,10 @@ Thus, in order to clean the data I will:<br>
 <li> Add a new <i> stay_total_cost </i> column as a product between <i> total_nights_stays </i> and <i> adr </i>, meaning the total cost of the booking </li>
 <li> Remove columns <i> babies, stays_in_weeken_nights, stays_in_week_nights, reservation_status_date, reservation_status, arrival_date_day_of_month, arrival_date_year, arrival_date_week_number, assigned_room_type, country, total_of_special_repares, required</i></li>
 </ul>
-At the end there are 21 columns left.
+At the end there are 21 columns left.<br>
+
 ## 3.  Results and discussions
+
 <br>First, I created correlation matrices for both uncanceled and canceled bookings (shown below) to see if the attributes are independent or not. It is thus observed that the attributes are more correlated in case of uncanceled bookings. <br>
 There are some positive correlations between:<br>
 <ul>
@@ -221,6 +223,7 @@ In order to find the best the classification model I will try: <b> logistic regr
 Firstly, I divided the data set into a training and test set in proportions of 70% and 30%, using stratification by is_canceled.<br>
 
 ###  a.	Logistic Regression
+	
 In order to create the logistic regression model I used all 21 attributes.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124272819-ebca5980-db47-11eb-8640-d8d517df9e1f.png)<br>
 
@@ -228,7 +231,9 @@ Next, I made a prediction and made the confusion matrix.
 It is noted that the model has an accuracy of 77.94% and a fairly good P-value. At the same time, the no information rate is 0.6296 showing that there is a 62.96% chance to make a correct classification if we did not have any information.
 The positive class is NO since there are fewer cases of cancellations.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124272856-fb49a280-db47-11eb-8eac-71dbdc2de1ec.png)<br>
+	
 ### b.	Naive Bayes
+	
 To make a Naive Bayes model, I first made a feature set in which I kept all the attributes that are not is_canceled. Next, I used the 10 folds cross-validation method and made the model.
 To find the optimal model I performed an extensive search, the result being the following.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124272928-14eaea00-db48-11eb-99a4-d9fa67226993.png)<br>
@@ -250,6 +255,7 @@ On the second is deposit_type (No refund).The next important attribute is lead_t
 The model has an accuracy of 76.91% and a good P-value, showing that this is a fairly good classification method. However, it does not differ much from previous models, no information rate and P-value have the same value as the Naive Bayes model, and the accuracy is only slightly (0.47) higher.<br>
 
 ### c2) Entropy
+	
 ![image](https://user-images.githubusercontent.com/63421754/124273286-7ad77180-db48-11eb-8cea-d2be5c86f86f.png)<br>
 	
 The resulting tree this time is a little deeper. Similar to the previous one, deposit_type and lead_time are placed on the first two levels, but this time the time period for lead_time is 8.5 days and not 11.5.<br>
@@ -261,14 +267,19 @@ Instead, if the marketing segment is a defined one and the person making the boo
 ![image](https://user-images.githubusercontent.com/63421754/124273370-9d698a80-db48-11eb-9f29-803519a6cbd6.png)<br>
 
 The accuracy of the model is not higher than of the previous model, in fact, it is identical to the Naive Bayes model<br>
+	
 ### d.	Advanced Classification Trees
+	
 ### d1) Bagging
+	
 ![image](https://user-images.githubusercontent.com/63421754/124273434-ae1a0080-db48-11eb-947b-7fc437db63f4.png)<br>
  
 Bagging makes 25 bags, with an out-of-bag error of 0.1876, which means an accuracy of 82%.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124273475-b96d2c00-db48-11eb-985b-a1cdbe37b927.png)<br>
 The model has an accuracy of 82.02%, much better than previous models. Also, the specificity is much better than that of the models made so far.
+	
 ### d2) Random Forest
+	
 ![image](https://user-images.githubusercontent.com/63421754/124273528-cbe76580-db48-11eb-85cc-1dc1e5c0bc8f.png)<br>
 
 With the help of the randomForest function, 500 trees were created, 4 variables at each node. <br>
@@ -287,7 +298,9 @@ The accuracy on the test set is 82.85%, the model also having better sensitivity
 At the end, I made a graph with all the ROC curves of the models made:<br>
 ![image](https://user-images.githubusercontent.com/63421754/124273962-56c86000-db49-11eb-88a8-6205e875bf6a.png)<br>
 Random Forest occupies the largest area in the chart, as it manages to discover 89.5% of canceled cancellations, which is followed by Bagging at a small difference.
+	
 ## 4.	Conclusions
+	
 Following the results obtained, I managed to achieve the objectives proposed at the beginning of the project. Thus, it can be concluded that reservations are largely influenced by: <br>
 <ul>
 <li> the deposit type </li>
