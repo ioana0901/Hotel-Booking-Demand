@@ -207,7 +207,7 @@ Thus, in order to clean the data I will:<br>
 <li> Remove columns <i> babies, stays_in_weeken_nights, stays_in_week_nights, reservation_status_date, reservation_status, arrival_date_day_of_month, arrival_date_year, arrival_date_week_number, assigned_room_type, country, total_of_special_repares, required</li>
 </ul>
 At the end there are 21 columns left. <br>
-## 3.	Results and discussions
+##  3.	Results and discussions
 First, I created correlation matrices for both uncanceled and canceled bookings (shown below) to see if the attributes are independent or not. It is thus observed that the attributes are more correlated in case of uncanceled bookings. <br>
 There are some positive correlations between:<br>
 <ul>
@@ -218,10 +218,10 @@ There are some positive correlations between:<br>
 
 ![image](https://user-images.githubusercontent.com/63421754/124272632-ad349f00-db47-11eb-85a5-e2af72964330.png)<br>
 
-In order to find the best the classification model I will try: <b> logistic regression, Naive Bayes, </b> classification trees (by approaching <b> CART </b>, and then <b> entropy </ b>) and advanced classification trees (<b> Bagging </b> and <b> Random Forest </b>). br
+In order to find the best the classification model I will try: <b> logistic regression, Naive Bayes, </b> classification trees (by approaching <b> CART </b>, and then <b> entropy </b>) and advanced classification trees (<b> Bagging </b> and <b> Random Forest </b>). <br>
 Firstly, I divided the data set into a training and test set in proportions of 70% and 30%, using stratification by is_canceled.<br>
 
-### a.	Logistic Regression
+###  a.	Logistic Regression
 In order to create the logistic regression model I used all 21 attributes.<br>
 ![image](https://user-images.githubusercontent.com/63421754/124272819-ebca5980-db47-11eb-8640-d8d517df9e1f.png)<br>
 
